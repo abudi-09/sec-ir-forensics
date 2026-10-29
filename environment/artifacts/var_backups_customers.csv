@@ -1,0 +1,6 @@
+id,name,email,plan
+1,Jane Example,jane@example.com,pro
+2,John Example,john@example.com,free
+3,Alex Sample,alex@example.net,pro
+# NOTE: synthetic sample data (example.com / example.net addresses only).
+# Represents the file at /var/backups/customers.csv on the host.

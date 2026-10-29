@@ -1,0 +1,31 @@
+schema_version = "1.3"
+
+[task]
+name = "samples/ir-forensics-web01"
+description = "Incident-response forensics: reconstruct an intrusion from synthetic Linux triage artifacts and report structured findings."
+authors = [{ name = "Sample Author" }]
+keywords = ["security", "incident-response", "forensics", "blue-team"]
+
+[metadata]
+difficulty = "easy"
+category = "cybersecurity"
+subcategory = "incident-response-forensics"
+# Scalar reward in [0, 1] = fraction of the 5 findings fields that are correct.
+estimated_human_hours = 2
+
+[environment]
+network_mode = "no-network"
+cpus = 1
+memory_mb = 1024
+storage_mb = 1024
+workdir = "/app"
+
+[agent]
+# Budget ceiling (seconds); 72000 = 20h to match the FrontierSWE format. The
+# task itself is short — see [metadata] difficulty / estimated_human_hours.
+timeout_sec = 72000
+
+[verifier]
+environment_mode = "shared"
+network_mode = "no-network"
+timeout_sec = 300
